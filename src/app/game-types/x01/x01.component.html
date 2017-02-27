@@ -1,26 +1,24 @@
-<h1>
-  {{title}} Game Interface:
-</h1>
-<form>
-  <fieldset>
+<div class="container">
+  <h1>
+    {{title}} Game Interface:
+  </h1>
+  <form class="form-group" [formGroup]="turnInput">
     <div>
-      <label for="throw1Var">Throw 1</label>
-      <input id="throw1Var" type="text">
-    </div>
+      <div>
+        <input formControlName="throw1Var" type="text" placeholder="Throw 1">
+      </div>
 
-    <div>
-      <label for="throw2Var">Throw 2</label>
-      <input id="throw2Var" type="text">
-    </div>
+      <div>
+        <input formControlName="throw2Var" id="throw2Var" type="text" placeholder="Throw 2">
+      </div>
 
-    <div>
-      <label for="throw3Var">Throw 3</label>
-      <input id="throw3Var" type="text">
-    </div>
+      <div>
+        <input formControlName="throw3Var" id="throw3Var" type="text" placeholder="Throw 3">
+      </div>
 
-    <div>
-      <button type="submit">End Turn</button>
+      <div>
+        <button type="submit">End Turn</button>
+      </div>
     </div>
-
-  </fieldset>
-</form>
+  </form>
+</div>
