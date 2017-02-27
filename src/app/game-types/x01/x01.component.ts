@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-x01',
@@ -14,15 +14,15 @@ export class X01Component implements OnInit {
 
   ngOnInit() {
     this.turnInput = this.formBuilder.group({
-      throw1Var: ['',],
-      throw2Var: ['',],
-      throw3Var: ['',]
+      throw1Var: ['',[Validators.maxLength(3)]],
+      throw2Var: ['',[Validators.maxLength(3)]],
+      throw3Var: ['',[Validators.maxLength(3)]]
     });
   }
 
 }
 /* Validations I'm going to need:
-max of three chars
-starting either with a int, T, D or B
-int less than 20
- */
+X max of three chars
+  starting either with a int, T, D or B
+  int less than 20
+*/

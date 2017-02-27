@@ -7,7 +7,10 @@
       <div>
         <input formControlName="throw1Var" type="text" placeholder="Throw 1">
       </div>
-
+      <span>
+        <span class="alert-danger" *ngIf="(!turnInput.get('throw1Var').valid)">Inputs longer than 3 characters are invalid. Please see the input guide for more information regarding valid inputs.</span>
+        <div class="alert-danger">Non-bullseye throw inputs must contain a number between 0 and 20. Please see the input guide for more information regarding valid inputs.</div>
+      </span>
       <div>
         <input formControlName="throw2Var" id="throw2Var" type="text" placeholder="Throw 2">
       </div>
@@ -17,7 +20,10 @@
       </div>
 
       <div>
-        <button type="submit">End Turn</button>
+        <button
+          type="submit"
+          [disabled]="!turnInput.valid">End Turn
+        </button>
       </div>
     </div>
   </form>
