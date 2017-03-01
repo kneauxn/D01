@@ -1,3 +1,3 @@
- Aexport interface ThrowValidator {
+export interface ThrowValidator {
 
 }
