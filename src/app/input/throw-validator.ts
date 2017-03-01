@@ -1,0 +1,3 @@
+ Aexport interface ThrowValidator {
+
+}
