@@ -9,10 +9,6 @@ function throwValidator(c: AbstractControl): {[key: string]: boolean | null} {
   if (c.value.toLowerCase() === 'db') {
     return null;
   }
-  // the first character can be a multiplier character, and so an alpha character, but not any of the other characters
-  if (isNaN(c.value.slice(1))) {
-    return {'invChar': true};
-  }
   // the first character must be either a number or a multiplier value
   // if it isn't a number...
   if (isNaN(c.value.charAt(0))) {
@@ -26,6 +22,21 @@ function throwValidator(c: AbstractControl): {[key: string]: boolean | null} {
     }
     if(isMultiplied === false) {
       return {'firstCharInv': true}
+    }
+  }
+  // the first character can be a multiplier character, and so an alpha character, but not any of the other characters
+  if (isNaN(c.value.slice(1))) {
+    return {'invChar': true};
+  }
+  // the input numbers must be within the allowed range
+  if(isNaN(c.value.charAt(0))) {
+    if(c.value.slice(1) > 20) {
+      return {'invRange': true}
+    }
+  }
+  else {
+    if(c.value > 20) {
+      return {'invRange': true}
     }
   }
   return null;
