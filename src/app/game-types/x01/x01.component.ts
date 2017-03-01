@@ -52,8 +52,4 @@ export class X01Component implements OnInit {
   }
 
 }
-/* Validations I'm going to need:
-X max of three chars
-  starting either with a int, T, D or B
-  int less than 20
-*/
+
