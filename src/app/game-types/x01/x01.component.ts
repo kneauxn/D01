@@ -21,7 +21,7 @@ function throwValidator(c: AbstractControl): {[key: string]: boolean | null} {
       }
     }
     if(isMultiplied === false) {
-      return {'firstCharInv': true}
+      return {'firstCharInv': true};
     }
   }
   // the first character can be a multiplier character, and so an alpha character, but not any of the other characters

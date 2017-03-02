@@ -9,12 +9,20 @@
       </div>
       <!--warning block-->
       <span class="alert-danger">
-        <span *ngIf="(!turnInput.valid)">
-          error error error
-        </span>
         <span *ngIf="(turnInput.get('throw1Var').hasError('firstCharInv'))">
-          Input contains invalid characters
+          Each Input must begin with a number or multiplier character.
         </span>
+        <span *ngIf="(turnInput.get('throw1Var').hasError('invChar'))">
+          Input contains invalid characters.
+        </span>
+        <span *ngIf="(turnInput.get('throw1Var').hasError('invRange'))">
+          Inputted numbers must be within the allowed range.
+        </span>
+        <span *ngIf="(!turnInput.get('throw1Var').valid)">
+          Please see the input guide for more information on allowed inputs
+        </span>
+        <!--end of warning block-->
+
 
       </span>
       <div>
